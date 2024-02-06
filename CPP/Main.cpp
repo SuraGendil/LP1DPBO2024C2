@@ -11,15 +11,15 @@ void updateData(list<DPR> &llist)
     cout << "Masukkan indeks data yang ingin diupdate: ";
     cin >> Update_Index;
 
+    cout << "=====   Info Update Data    ===== \n";
+    cout << "nama gender jabatan komisi partai  \n";
+    cout << "====== Ikuti struktur diatas ==== \n";
     if (Update_Index >= 1 && Update_Index <= llist.size())
     {
         string name, jabatan, komisi, partai;
         char gender;
 
-        cout << "=====   Info Update Data    ===== \n";
-        cout << "nama gender jabatan komisi partai  \n";
-        cout << "====== Ikuti struktur diatas ==== \n";
-        cout << "Masukkan data baru : \n";
+        cout << "Masukkan data baru : ";
         cin >> name >> gender >> jabatan >> komisi >> partai;
 
         list<DPR>::iterator it = llist.begin();
@@ -65,7 +65,12 @@ void deleteData(list<DPR> &llist)
 
         // Menampilkan data terbaru setelah penghapusan
         cout << "Data terbaru setelah penghapusan:\n";
-        cout << "Data Sudah Kosong\n" << endl;
+        int i = 0;
+        for (list<DPR>::iterator it = llist.begin(); it != llist.end(); it++)
+        {
+            cout << "| " << (i + 1) << ". " << it->get_name() << " - " << it->get_gender() << " - " << it->get_jabatan() << " - " << it->get_komisi() << " - " << it->get_partai() << " | " << '\n';
+            i++;
+        }
     }
     else
     {
@@ -82,7 +87,7 @@ void addNewData(list<DPR> &llist)
     cout << "=====   Info New Data    ===== \n";
     cout << "nama gender jabatan komisi partai  \n";
     cout << "====== Ikuti struktur diatas ==== \n";
-    cout << "Masukkan data baru : \n";
+    cout << "Masukkan data baru : ";
     cin >> name >> gender >> jabatan >> komisi >> partai;
 
     DPR newData;
@@ -94,7 +99,8 @@ void addNewData(list<DPR> &llist)
 
     llist.push_back(newData);
 
-    cout << "Data baru berhasil ditambahkan!" << '\n'<< endl;
+    cout << "Data baru berhasil ditambahkan!" << '\n'
+         << endl;
 
     cout << "Data terbaru setelah penambahan data baru:\n";
     int i = 0;
@@ -144,15 +150,15 @@ int main()
     // membuat list
     list<DPR> llist;
 
+    cout << "=====   Info New Data    ===== \n";
+    cout << "nama gender jabatan komisi partai  \n";
+    cout << "====== Ikuti struktur diatas ==== \n";
     // untuk input list nama
     for (int i = 0; i < n; i++)
     {
         DPR temp;
 
-        cout << "=====   Info New Data    ===== \n";
-        cout << "nama gender jabatan komisi partai  \n";
-        cout << "====== Ikuti struktur diatas ==== \n";
-        cout << "Masukkan data ke-" << (i + 1);
+        cout << "Masukkan data ke-" << (i + 1) << " : ";
 
         string name, jabatan, komisi, partai;
         char gender;
@@ -168,7 +174,8 @@ int main()
     }
 
     // Automatic Output
-    cout << '\n' << "Automatic Output : " << '\n';
+    cout << '\n'
+         << "Automatic Output : " << '\n';
     cout << "Nama Anggota DPR RI " << RI.get_name() << '\n';
     cout << "Gender Anggota DPR RI " << RI.get_gender() << "\n";
     cout << "Jabatan Anggota DPR RI " << RI.get_jabatan() << "\n";
@@ -187,13 +194,14 @@ int main()
     // Option untuk memilih fitur;
     string option;
 
+    cout << "=====         Info          ===== \n";
+    cout << "Pilih Fitur yang ingin diinginkan \n";
+    cout << "Ketik Ulang perintah dengan sesua \n";
+    cout << "====== Ikuti struktur diatas ==== \n";
+
     // Loop untuk Fitur
     while (true)
     {
-        cout << "=====         Info          ===== \n";
-        cout << "Pilih Fitur yang ingin diinginkan \n";
-        cout << "Ketik Ulang perintah dengan sesua \n";
-        cout << "====== Ikuti struktur diatas ==== \n";
         cout << "Pilih opsi (update/delete/new/help/exit): ";
         cin >> option;
 
