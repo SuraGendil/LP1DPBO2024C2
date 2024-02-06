@@ -23,6 +23,7 @@ public:
         this->jabatan = "";
         this->komisi = "";
     }
+    
     DPR(string name, char gender, string partai, string jabatan, string komisi)
     {
         this->name = name;
@@ -86,6 +87,7 @@ public:
     {
         this->komisi = komisi;
     }
+
 
         ~DPR()
     {
