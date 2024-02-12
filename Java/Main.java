@@ -17,7 +17,7 @@ public class Main {
 
     // Fungsi untuk menambahkan anggota DPR
     public static void addDPRFromInput(ArrayList<DPR> list, Scanner sc) {
-        System.out.println("Masukkan data anggota DPR (Nama Gender Partai Jabatan Komisi):");
+        System.out.println("Masukkan data anggota DPR (Nama Partai Jabatan Komisi):");
         String name = sc.next();
         String partai = sc.next();
         String jabatan = sc.next();
@@ -141,7 +141,7 @@ public class Main {
         System.out.println("\n+=======================================+");
         System.out.println("+ Panduan Program                       +");
         System.out.println("+ Masukan Input dengan format :         +");
-        System.out.println("+ Nama Gender Partai Jabatan Komisi     +");
+        System.out.println("+ Nama Partai Jabatan Komisi            +");
         System.out.println("+=======================================+\n");
 
         System.out.println("Masukan Jumlah Data : ");
